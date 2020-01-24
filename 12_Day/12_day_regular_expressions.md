@@ -350,7 +350,7 @@ Zero or many times. The pattern could may not occur or it can occur many times.
 
 const pattern = /[a].*/g  //. any character, + any character one or more times 
 const txt = 'Apple and banana are fruits'
-const matches = re.match(pattern)
+const matches = txt.match(pattern)
 
 console.log(matches)  // ['and banana are fruits']
 
@@ -383,7 +383,7 @@ console.log(matches)  // ['2019']
 
 ```js
 const txt = 'This regular expression example was made in December 6,  2019.'
-const regex_pattern = /\d{1, 4}/g   // 1 to 4
+const pattern = /\d{1,4}/g   // 1 to 4
 const matches = txt.match(pattern)
 console.log(matches)  // ['6', '2019']
 ```
@@ -396,7 +396,7 @@ console.log(matches)  // ['6', '2019']
 const txt = 'This regular expression example was made in December 6,  2019.'
 const pattern = /^This/ // ^ means starts with
 const matches = txt.match(pattern)
-console.log(matches)  / ['This']
+console.log(matches)  // ['This']
 ```
 
 - Negation
@@ -405,12 +405,12 @@ console.log(matches)  / ['This']
 const txt = 'This regular expression example was made in December 6,  2019.'
 const pattern = /[^A-Za-z,. ]+/g  // ^ in set character means negation, not A to Z, not a to z, no space, no coma no period
 const matches = txt.match(pattern)
-console.log(matches)  ["6", "2019"]
+console.log(matches)  // ["6", "2019"]
 ```
 
 ### Exact match
 
-It should hav ^ starting and $ which is an end.
+It should have ^ starting and $ which is an end.
 
 ```js
 let pattern = /^[A-Z][a-z]{3,12}$/;
@@ -454,29 +454,29 @@ distance = 12
     ```
 
     ```sh
-        [(6, 'love'),
-        (5, 'you'),
-        (3, 'can'),
-        (2, 'what'),
-        (2, 'teaching'),
-        (2, 'not'),
-        (2, 'else'),
-        (2, 'do'),
-        (2, 'I'),
-        (1, 'which'),
-        (1, 'to'),
-        (1, 'the'),
-        (1, 'something'),
-        (1, 'if'),
-        (1, 'give'),
-        (1, 'develop'),
-        (1, 'capabilities'),
-        (1, 'application'),
-        (1, 'an'),
-        (1, 'all'),
-        (1, 'Python'),
-        (1, 'If')
-        ]
+        [
+        {word:'love', count:6},
+        {word:'you', count:5},
+        {word:'can', count:3},
+        {word:'what', count:2},
+        {word:'teaching', count:2},
+        {word:'not', count:2},
+        {word:'else', count:2},
+        {word:'do', count:2},
+        {word:'I', count:2},
+        {word:'which', count:1},
+        {word:'to', count:1},
+        {word:'the', count:1},
+        {word:'something', count:1},
+        {word:'if', count:1},
+        {word:'give', count:1},
+        {word:'develop',count:1},
+        {word:'capabilities',count:1},
+        {word:'application', count:1},
+        {word:'an',count:1},
+        {word:'all',count:1},
+        {word:'Python',count:1},
+        {word:'If',count:1}]
     ```
 
     ```js
@@ -484,16 +484,16 @@ distance = 12
     ```
 
     ```sh
-    [   (6, 'love'),
-        (5, 'you'),
-        (3, 'can'),
-        (2, 'what'),
-        (2, 'teaching'),
-        (2, 'not'),
-        (2, 'else'),
-        (2, 'do'),
-        (2, 'I'),
-        (1, 'which')
+   [{word:'love', count:6},
+    {word:'you', count:5},
+    {word:'can', count:3},
+    {word:'what', count:2},
+    {word:'teaching', count:2},
+    {word:'not', count:2},
+    {word:'else', count:2},
+    {word:'do', count:2},
+    {word:'I', count:2},
+    {word:'which', count:1}
     ]
     ```
 
@@ -514,7 +514,7 @@ distance = 12
 
     ```js
     console.log(mostFrequentWords(cleanedText))
-    [(3, 'I'), (2, 'teaching'), (2, 'teacher')]
+    [{word:'I', count:3}, {word:'teaching', count:2}, {word:'teacher', count:2}]
     ```
 
 
